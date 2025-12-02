@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. Learn chords, strumming patterns, and simple songs within weeks.",
+    "image": "https://i.ibb.co.com/m5kW1PWc/youtube-header-option-2-1.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers focusing on pronunciation and fluency.",
+    "image": "https://i.ibb.co.com/R4Nr9rNr/learn-languages-ols-banner.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Basic Web Development",
+    "providerName": "Jhankar Mahbub",
+    "providerEmail": "Jhankar@skillswap.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Learn HTML, CSS, and JavaScript to build your first responsive website from scratch.",
+    "image": "https://i.ibb.co.com/vCrJZzX3/banner-thumbnail.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Priya Sen",
+    "providerEmail": "priya@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Gentle yoga classes focusing on flexibility, breathing, and relaxation. Perfect for beginners.",
+    "image": "https://i.ibb.co.com/PvryrRzd/how-much-joining-gym-helps-health-2-jpg-1488906648.jpg",
+    "category": "Health & Fitness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Digital Art & Illustration",
+    "providerName": "Rafiul Islam",
+    "providerEmail": "rafi@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Learn to create stunning digital illustrations using Procreate or Adobe Photoshop.",
+    "image": "https://i.ibb.co.com/gZjk21fy/1-U-dp-S-nb-Qu-Gc-O5i-Mo-TDIvg.jpg",
+    "category": "Art & Design"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Cooking Traditional Dishes",
+    "providerName": "Mariam Chowdhury",
+    "providerEmail": "mariam@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 5,
+    "description": "Hands-on classes for learning authentic traditional recipes and cooking techniques.",
+    "image": "https://i.ibb.co.com/HT0kBDnB/images.jpg",
+    "category": "Cooking"
+  }
+]
