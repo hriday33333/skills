@@ -1,13 +1,16 @@
-import { FaLightbulb, FaEye, FaHandshake } from "react-icons/fa";
+import { FaEye, FaHandshake, FaLightbulb } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <div className="bg-gray-50 text-gray-900">
+    <div className="bg-gray-50 text-gray-900 py-16 w-11/12 mx-auto">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-4">Welcome to SkillSwap</h1>
+      <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24 text-center ">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          Welcome to SkillSwap
+        </h1>
         <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-          Connecting learners with skilled providers online to make learning easy, accessible, and fun.
+          Connecting learners with skilled providers online to make learning
+          easy, accessible, and fun.
         </p>
       </section>
 
@@ -18,7 +21,8 @@ const About = () => {
           <FaLightbulb className="text-blue-500 text-5xl mb-4 mx-auto" />
           <h2 className="text-2xl font-semibold mb-2">Our Mission</h2>
           <p>
-            Make skill learning accessible for everyone. We bridge the gap between learners and skilled providers.
+            Make skill learning accessible for everyone. We bridge the gap
+            between learners and skilled providers.
           </p>
         </div>
 
@@ -27,7 +31,8 @@ const About = () => {
           <FaEye className="text-indigo-500 text-5xl mb-4 mx-auto" />
           <h2 className="text-2xl font-semibold mb-2">Our Vision</h2>
           <p>
-            Empower learners worldwide to grow professionally and personally by connecting them with top skills.
+            Empower learners worldwide to grow professionally and personally by
+            connecting them with top skills.
           </p>
         </div>
 

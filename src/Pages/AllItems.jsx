@@ -10,7 +10,7 @@ const AllItems = () => {
 
   const [skills, setSkills] = useState([]);
   const [search, setSearch] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState('all');
+  const [categoryFilter, ] = useState('all');
   const [sortType, setSortType] = useState('none');
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const AllItems = () => {
         />
 
         {/* Category Filter */}
-        <select
+        {/* <select
           className="select select-bordered w-full md:w-1/4"
           value={categoryFilter}
           onChange={(e) => setCategoryFilter(e.target.value)}
@@ -81,7 +81,7 @@ const AllItems = () => {
           <option value="cooking">Cooking</option>
           <option value="design">Design</option>
           <option value="programming">Programming</option>
-        </select>
+        </select> */}
 
         {/* Sorting */}
         <select

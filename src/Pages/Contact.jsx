@@ -18,11 +18,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen py-20 px-6">
+    <div className="bg-gray-50 min-h-screen py-20 px-6 w-11/12 mx-auto">
       {/* Header Section */}
-      <header className="text-center mb-16">
+      <header className="text-center mb-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24 text-center p-2">
         <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
-        <p className="text-lg max-w-2xl mx-auto">
+        <p className="text-lg max-w-2xl mx-auto ">
           Have questions or want to collaborate? Send us a message and we’ll get back to you as soon as possible.
         </p>
       </header>

@@ -19,7 +19,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-2xl rounded-b-2xl px-0 md:px-6 sticky top-0 z-50">
+<div className='sticky'>
+      <div className="navbar bg-base-100 shadow-2xl rounded-b-2xl px-0 md:px-6 ">
       {/* Left */}
       <div className="navbar-start flex items-center gap-2">
         {/* Mobile dropdown button */}
@@ -56,11 +57,23 @@ const Navbar = () => {
                 <NavLink to="/auth/skills">My Profile</NavLink>
               </>
             )}
+            <div className="divider divider-primary"></div>
+            <div className="flex items-center text-orange-500 p-2 space-x-2">
+              <h1 className="text-xl font-bold">My Profile</h1>
+              <Link to="/auth/skills">
+                <img
+                  className="w-9 md:w-12 rounded-full  cursor-pointer border-2"
+                  src={user ? user.photoURL : Logo}
+                  alt="User"
+                  title={user ? user.displayName || user.email : ''}
+                />
+              </Link>
+            </div>
           </ul>
         </div>
 
         {/* Logo */}
-        <img className="md:w-20 lg:flex hidden" src={ReactLogo} alt="Logo" />
+        <img className="w-15 lg:flex hidden" src={ReactLogo} alt="Logo" />
         <a>
           <span className="text-blue-500 text-xl md:text-3xl font-bold">
             Skill
@@ -90,29 +103,35 @@ const Navbar = () => {
 
       {/* Right */}
       <div className="navbar-end flex items-center gap-2 md:gap-3">
-        <img
-          className="w-10 md:w-12 rounded-full"
-          src={user ? user.photoURL : Logo}
-          alt="User"
-          title={user ? user.displayName || user.email : ''}
-        />
+        <Link to="/auth/skills">
+          <img
+            className="w-10 md:w-12 rounded-full hidden md:block cursor-pointer"
+            src={user ? user.photoURL : Logo}
+            alt="User"
+            title={user ? user.displayName || user.email : ''}
+          />
+        </Link>
 
         {user ? (
-          <button className="btn btn-sm md:btn-outline" onClick={handleLogOut}>
+          <button
+            className="btn btn-sm md:btn-outline bg-gradient-to-r from-blue-500 to-indigo-600 text-white  text-center p-4 px-5"
+            onClick={handleLogOut}
+          >
             Log out
           </button>
         ) : (
           <>
-            <Link to="/auth/login" className="btn btn-sm md:btn-outline">
+            <Link to="/auth/login" className="btn btn-sm md:btn-outline bg-gradient-to-r from-blue-500 to-indigo-600 text-white  text-center p-4 px-5">
               Login
             </Link>
-            <Link to="/auth/singup" className="btn btn-sm md:btn-outline">
+            <Link to="/auth/singup" className="btn btn-sm md:btn-outline bg-gradient-to-r from-blue-500 to-indigo-600 text-white  text-center p-4 px-5">
               Sign Up
             </Link>
           </>
         )}
       </div>
     </div>
+</div>
   );
 };
 

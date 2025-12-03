@@ -2,18 +2,19 @@ import { createBrowserRouter } from 'react-router';
 import AuthLayout from '../Layout/AuthLayout';
 import HomeLayout from '../Layout/HomeLayout';
 import CategoryDetels from '../Pages/CategoryDetels';
+import ForgetPassword from '../Pages/ForgetPassword';
 import Home from '../Pages/Home';
 import Loading from '../Pages/Loading';
 import Login from '../Pages/Login';
 import Profile from '../Pages/Profile';
 import SingUp from '../Pages/SingUp';
 import PrivateRoute from '../provider/PrivateRoute';
-import ForgetPassword from '../Pages/ForgetPassword';
 
 // New pages (you need to create simple components)
-import AllItems from '../Pages/AllItems';
 import About from '../Pages/About';
+import AllItems from '../Pages/AllItems';
 import Contact from '../Pages/Contact';
+import Error from '../Pages/Error';
 import Support from '../Pages/Support';
 
 const router = createBrowserRouter([
@@ -90,7 +91,7 @@ const router = createBrowserRouter([
 
   {
     path: '/*',
-    element: <div>Error404</div>,
+    element: <Error></Error>,
   },
 ]);
 
