@@ -1,12 +1,14 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 import {
   getAuth,
   GoogleAuthProvider,
   sendPasswordResetEmail,
   signInWithPopup,
 } from 'firebase/auth';
-import { use, useEffect, useRef, useState } from 'react';
+
+import { useContext, useEffect, useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
@@ -20,7 +22,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const emailRaf = useRef();
 
-  const { login, setUser } = use(AuthContext);
+  const { login, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -67,7 +69,7 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    setLoading(true); 
+    setLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
@@ -92,10 +94,9 @@ const Login = () => {
 
   const handlePass = () => {
     const email = emailRaf.current.value;
-    console.log(email);
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert('place chak your email');
+        alert('Please check your email!');
       })
       .catch();
   };
@@ -106,6 +107,7 @@ const Login = () => {
       data-aos="fade-up"
     >
       <Toaster />
+
       {loading && (
         <div className="fixed inset-0 bg-opacity-30 flex justify-center items-center z-50">
           <span className="loading loading-bars loading-xl"></span>
@@ -119,6 +121,7 @@ const Login = () => {
         <h2 className="font-semibold text-2xl text-center">
           Login your account
         </h2>
+
         <form
           onSubmit={handleLogIn}
           className="card-body"
@@ -167,7 +170,7 @@ const Login = () => {
                 onClick={handlePass}
                 to="/auth/forget-password"
                 state={{
-                  email: document.querySelector("input[name='email']")?.value,
+                  email: emailRaf.current?.value,
                 }}
                 className="link link-hover"
               >
@@ -177,10 +180,12 @@ const Login = () => {
 
             {error && <p className="text-red-500 text-xs">{error}</p>}
 
-            {/* Buttons */}
+            {/* Login Button */}
             <button className="btn btn-neutral mt-4 w-full" disabled={loading}>
               Login
             </button>
+
+            {/* Google Login */}
             <button
               type="button"
               onClick={handleGoogleLogin}

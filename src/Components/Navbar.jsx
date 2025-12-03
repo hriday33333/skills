@@ -7,6 +7,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -18,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-base-100 shadow-2xl rounded-b-2xl px-0 md:px-6 ">
+    <div className="navbar bg-base-100 shadow-2xl rounded-b-2xl px-0 md:px-6 sticky top-0 z-50">
       {/* Left */}
       <div className="navbar-start flex items-center gap-2">
         {/* Mobile dropdown button */}
@@ -45,27 +46,45 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-4 shadow flex flex-col gap-3"
           >
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/auth/skills">My Profile</NavLink>
+            <NavLink to="/all-items">All Items</NavLink>
+
+            {user && (
+              <>
+                <NavLink to="/about">About</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
+                <NavLink to="/support">Support</NavLink>
+                <NavLink to="/auth/skills">My Profile</NavLink>
+              </>
+            )}
           </ul>
         </div>
 
         {/* Logo */}
-        <img className=" md:w-20 lg:flex hidden" src={ReactLogo} alt="Logo" />
-        <a className="">
+        <img className="md:w-20 lg:flex hidden" src={ReactLogo} alt="Logo" />
+        <a>
           <span className="text-blue-500 text-xl md:text-3xl font-bold">
             Skill
           </span>
           <span className="font-semibold">
-            Swa<span className="text-orange-500 ">p</span>s
+            Swa<span className="text-orange-500">p</span>s
           </span>
         </a>
       </div>
 
       {/* Center (Desktop menu) */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal md:px-1 flex  md:gap-8">
+        <ul className="menu menu-horizontal md:px-1 flex md:gap-8">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/auth/skills">My Profile</NavLink>
+          <NavLink to="/all-items">All Items</NavLink>
+
+          {user && (
+            <>
+              <NavLink to="/about">About</NavLink>
+              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/support">Support</NavLink>
+              <NavLink to="/auth/skills">My Profile</NavLink>
+            </>
+          )}
         </ul>
       </div>
 
@@ -77,6 +96,7 @@ const Navbar = () => {
           alt="User"
           title={user ? user.displayName || user.email : ''}
         />
+
         {user ? (
           <button className="btn btn-sm md:btn-outline" onClick={handleLogOut}>
             Log out

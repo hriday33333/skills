@@ -11,7 +11,6 @@ const skillPromise = fetch("/skills.json").then((res) => res.json());
 const Hreo = () => {
   const skills = use(skillPromise);
 
-
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -22,7 +21,7 @@ const Hreo = () => {
 
   return (
     <div
-      className="w-full mx-auto md:mt-10 mt-20 rounded-2xl overflow-hidden shadow-xl"
+      className="w-full mx-auto mt-16 md:mt-10 rounded-2xl overflow-hidden shadow-xl"
       data-aos="fade-up"
     >
       <Swiper
@@ -34,23 +33,34 @@ const Hreo = () => {
       >
         {skills.map((skill, index) => (
           <SwiperSlide key={index}>
-            <div className="relative" data-aos="zoom-in" data-aos-delay="100">
+            <div
+              className="relative w-full h-[60vh] md:h-[70vh]"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
               <img
                 src={skill.image}
                 alt={skill.skillName}
-                className="w-full h-[450px] object-cover"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/70 flex flex-col justify-center items-center text-center text-white px-6">
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center text-center text-white px-6">
                 <h2
-                  className="text-3xl md:text-6xl font-bold mb-3"
+                  className="text-3xl md:text-5xl font-bold mb-2"
                   data-aos="fade-down"
                   data-aos-delay="200"
                 >
                   {skill.skillName}
                 </h2>
-                <h2  className="text-xl md:text-2xl font-semibold mb-3"
+
+                <h3
+                  className="text-lg md:text-2xl font-semibold"
                   data-aos="fade-down"
-                  data-aos-delay="200">{skill.providerName}</h2>
+                  data-aos-delay="300"
+                >
+                  {skill.providerName}
+                </h3>
               </div>
             </div>
           </SwiperSlide>

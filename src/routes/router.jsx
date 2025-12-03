@@ -9,42 +9,77 @@ import Profile from '../Pages/Profile';
 import SingUp from '../Pages/SingUp';
 import PrivateRoute from '../provider/PrivateRoute';
 import ForgetPassword from '../Pages/ForgetPassword';
+
+// New pages (you need to create simple components)
+import AllItems from '../Pages/AllItems';
+import About from '../Pages/About';
+import Contact from '../Pages/Contact';
+import Support from '../Pages/Support';
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomeLayout></HomeLayout>,
+    element: <HomeLayout />,
     children: [
       {
         index: true,
-        element: <Home></Home>,
+        element: <Home />,
       },
+
+      // 🔥 All Items page → Open route (no private)
+      {
+        path: '/all-items',
+        element: <AllItems />,
+        loader: () => fetch('/skills.json'),
+      },
+
+      // 🔥 Category details → (You kept private, so kept same)
       {
         path: '/category/:skillId',
         element: (
           <PrivateRoute>
-            <CategoryDetels></CategoryDetels>
+            <CategoryDetels />
           </PrivateRoute>
         ),
         loader: () => fetch('/skills.json'),
-        hydrateFallbackElement: <Loading></Loading>,
+        hydrateFallbackElement: <Loading />,
+      },
+
+      // 🔥 About page
+      {
+        path: '/about',
+        element: <About />,
+      },
+
+      // 🔥 Contact page
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+
+      // 🔥 Support page
+      {
+        path: '/support',
+        element: <Support />,
       },
     ],
   },
+
   {
     path: '/auth',
-    element: <AuthLayout></AuthLayout>,
+    element: <AuthLayout />,
     children: [
       {
         path: '/auth/login',
-        element: <Login></Login>,
+        element: <Login />,
       },
       {
         path: '/auth/singup',
-        element: <SingUp></SingUp>,
+        element: <SingUp />,
       },
       {
         path: '/auth/skills',
-        element: <Profile></Profile>,
+        element: <Profile />,
       },
       {
         path: '/auth/forget-password',
@@ -58,4 +93,5 @@ const router = createBrowserRouter([
     element: <div>Error404</div>,
   },
 ]);
+
 export default router;
