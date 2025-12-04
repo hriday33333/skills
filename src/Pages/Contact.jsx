@@ -20,7 +20,7 @@ const Contact = () => {
   return (
     <div className="bg-gray-50 min-h-screen py-20 px-6 w-11/12 mx-auto">
       {/* Header Section */}
-      <header className="text-center mb-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24 text-center p-2">
+      <header className="text-center mb-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24 text-center p-2 rounded-2xl">
         <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
         <p className="text-lg max-w-2xl mx-auto ">
           Have questions or want to collaborate? Send us a message and we’ll get back to you as soon as possible.
@@ -73,7 +73,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
+              className=" text-white px-6 py-3 rounded-lg font-semibold bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 text-center  rounded-lg hover:scale-105 transition-transform"
             >
               Send Message
             </button>

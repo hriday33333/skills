@@ -79,7 +79,7 @@ const CategoryDetels = () => {
 
         {/* Skill Details */}
         <div className="space-y-4 w-full max-w-md" data-aos="fade-left">
-          <h1 className="text-4xl font-bold text-primary">{skill.skillName}</h1>
+          <h1 className="text-4xl font-bold text-orange-500">{skill.skillName}</h1>
           <p className="text-gray-700">{skill.description}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-lg">
@@ -119,7 +119,7 @@ const CategoryDetels = () => {
               required
             />
 
-            <button type="submit" className="btn btn-primary w-full">
+            <button type="submit" className="btn btn-primary w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 text-center  rounded-lg hover:scale-105 transition-transform">
               Submit
             </button>
           </form>

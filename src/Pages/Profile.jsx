@@ -77,7 +77,7 @@ const Profile = () => {
                   <span className="badge badge-success badge-outline">Active</span>
                   <button
                     onClick={() => setEditMode(true)}
-                    className="btn btn-sm btn-primary"
+                    className="btn bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 text-center  rounded-lg hover:scale-105 transition-transform"
                   >
                     Edit Profile
                   </button>
@@ -194,13 +194,13 @@ const Profile = () => {
                 />
 
                 <div className="flex justify-end gap-2">
-                  <button type="submit" className="btn btn-primary btn-sm">
+                  <button type="submit" className="btn  btn-sm bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 text-center  rounded-lg hover:scale-105 transition-transform">
                     Save
                   </button>
                   <button
                     type="button"
                     onClick={() => setEditMode(false)}
-                    className="btn btn-outline btn-sm"
+                    className="btn bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 text-center  rounded-lg hover:scale-105 transition-transform btn-sm"
                   >
                     Cancel
                   </button>

@@ -65,7 +65,7 @@ const SkillsCard = () => {
               <div className="mt-auto">
                 <Link
                   to={`/category/${skill.skillId}`}
-                  className="mt-3 block w-full text-center bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                  className="mt-3 block w-full text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 text-center  rounded-lg hover:scale-105 transition-transform"
                 >
                   View Details
                 </Link>
